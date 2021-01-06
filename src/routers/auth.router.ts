@@ -11,5 +11,6 @@ export class AuthRouter {
 
   private setupRoutes(): void {
     this.router.post("/register", AuthController.register);
+    this.router.post("/login", AuthController.login);
   }
 }

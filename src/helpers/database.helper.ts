@@ -3,7 +3,7 @@ import { env } from "../configs/env.config";
 
 export class DatabaseHelper {
   public setupDatabase(): void {
-    mongoose.connect(env.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(env.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
     const db = mongoose.connection;
     db.on("error", console.error.bind(console, "MongoDB connection error: "));
